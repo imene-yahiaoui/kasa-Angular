@@ -1,32 +1,21 @@
 import { Component } from '@angular/core';
+import { PictureComponent } from '../../components/picture/picture.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, PictureComponent],
   template: `
-
-  
+    <div>
+      <app-picture [photo]="photo" [text]="text" [paragraphe]="paragraphe">
+      </app-picture>
+    </div>
   `,
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  // import ImageDesktop from "../../assets/images/headerDesktop.png";
-//   type HomeProps = {
-//   posts: {
-//     id: string;
-//     title: string;
-//     cover: string;
-//     pictures: string[];
-//     description: string;
-//     host: {
-//       name: string;
-//       picture: string;
-//     };
-//     rating: number;
-//     location: string;
-//     equipments: string[];
-//     tags: string[];
-//   }[];
-// }
+  photo = '../../../assets/images/headerDesktop.png';
+  text = 'Chez vous,';
+  paragraphe = 'partout et ailleurs';
 }
