@@ -1,0 +1,49 @@
+@import "../../../assets/sass/variable.scss";
+@import "../../../assets/sass/mixin.scss";
+
+
+.notFound {
+  margin: 90px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 10px;
+}
+.notFound-img {
+  height: auto;
+  position: relative;
+  margin-bottom: 40px;
+}
+.notFound-p {
+  font-size: 36px;
+  font-weight: 500;
+  color: $color-primaire;
+  margin-bottom: 120px;
+  text-align: center;
+}
+a {
+    text-decoration: none;
+    color: $color-primaire;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+@include portable {
+  .notFound-p {
+    font-size: 18px;
+    text-align: center;
+    span {
+      display: block;
+    }
+  }
+
+  a {
+    font-size: 14px;
+  }
+}
+
+
+@include portable_smal{
+
+    
+}
