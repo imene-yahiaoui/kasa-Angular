@@ -5,12 +5,13 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   template: `
-    <p>
-      footer works!
-    </p>
+  <div class="footer">
+  <img src={{LogoFooter}} alt=" logo kasa"/>
+  <p>© 2020 Kasa. All rights reserved</p>
+</div>
   `,
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
-
+  LogoFooter="../../../assets/images/logoFooter.png"
 }

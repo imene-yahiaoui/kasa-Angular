@@ -4,7 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import {RouterModule} from "@angular/router";
 import { HeaderComponent } from './components/header/header.component';
-import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -38,11 +38,11 @@ import { HeaderComponent } from './components/header/header.component';
 
   <router-outlet> </router-outlet>
   </div>
-
+  <app-footer></app-footer>
   `,
     
   styleUrl: './app.component.scss',
-  imports: [HomeComponent,RouterModule,CommonModule,RouterModule,HeaderComponent],
+  imports: [HomeComponent,RouterModule,CommonModule,RouterModule,HeaderComponent,FooterComponent],
 })
 export class AppComponent {
 
