@@ -13,12 +13,13 @@ import { DataService } from '../../data.service';
       <app-picture [photo]="photo" [text]="text" [paragraphe]="paragraphe">
       </app-picture>
      
-      <div class="container"></div>
+      <div class="container">
       <app-frame
         *ngFor="let item of data"
         [title]="item.title"
         [cover]="item.cover"
       ></app-frame>
+      </div>
     </div>
   `,
   styleUrl: './home.component.scss',
