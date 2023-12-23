@@ -16,6 +16,7 @@ import { DataService } from '../../data.service';
       <div class="container">
       <app-frame
         *ngFor="let item of data"
+        [id]="item.id"
         [title]="item.title"
         [cover]="item.cover"
       ></app-frame>

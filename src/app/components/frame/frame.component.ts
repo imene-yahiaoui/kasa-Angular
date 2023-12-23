@@ -1,24 +1,35 @@
-import { Component ,Input} from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-frame',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   template: `
-  <a routerLink to="/" >
-  <div class="frame">
-    <div class="containerFrame">
-      <img src="{{ cover }}"alt="{{ title }}"/>
-      <p>{{ title }}</p>
-    </div>
-    <div class="middle"> </div>
-  </div>
-</a>
+    <a [routerLink]="['/accommodate',id]">
+      <div class="frame">
+        <div class="containerFrame">
+          <img src="{{ cover }}" alt="{{ title }}" />
+          <p>{{ title }}</p>
+        </div>
+        <div class="middle"></div>
+      </div>
+    </a>
   `,
-  styleUrl: './frame.component.scss'
+  styleUrl: './frame.component.scss',
 })
 export class FrameComponent {
   @Input() title: string = '';
-  @Input() cover : string = '';
-  // @Input() id: string='';
+  @Input() cover: string = '';
+  @Input() id: string = '';
+//  pictures: string[] = [];
+//    description: string;
+//    host: {
+//     name: string = '';
+//     picture: string = '';
+//   };
+//  rating: number = '';
+//   location: string = '';
+//   equipments: string[];
+//  tags: string[]=[];
 }

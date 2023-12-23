@@ -25,7 +25,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
       </div>
       <div class="collapse-article" [style.display]="open">
         <p>{{ text }}</p>
-        <ul class="ArryText">
+
+        <ul>
           {{
             ArryText
           }}
@@ -43,4 +44,5 @@ export class CollapseComponent {
   @Input() title: string = '';
   @Input() text: string = '';
   @Input() ArryText: string[] = [];
+  @Input() equipement: string = '';
 }
