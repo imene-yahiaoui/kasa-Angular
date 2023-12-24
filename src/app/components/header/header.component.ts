@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import {RouterModule} from "@angular/router";
-
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +8,7 @@ import {RouterModule} from "@angular/router";
   template: `
     <div class="header">
       <a routerLink="/">
-        <img class="logo" [src]="photoOfLogo"alt="logo Kasa"/>
+        <img class="logo" [src]="photoOfLogo" alt="logo Kasa" />
       </a>
       <ul class="nav">
         <li>
@@ -22,8 +21,7 @@ import {RouterModule} from "@angular/router";
     </div>
   `,
   styleUrl: './header.component.scss',
-  
 })
 export class HeaderComponent {
-  photoOfLogo="../../assets/images/logo.png" 
+  photoOfLogo = '../../assets/images/logo.png';
 }

@@ -11,11 +11,14 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-accommodate',
   standalone: true,
   imports: [
+    RouterModule,
     CommonModule,
     CarrouselComponent,
     CollapseComponent,
@@ -25,7 +28,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     TagComponent,
     FontAwesomeModule,
   ],
+
   template: `
+    <!-- @if (dataAccommodate) { -->
     <div class="App">
       <div class="carrousel_imgs">
         <app-carrousel
@@ -69,6 +74,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
         ></app-collapse>
       </div>
     </div>
+    <!-- }@else{
+   
+    <h1> hello </h1>
+    } -->
   `,
   styleUrl: './accommodate.component.scss',
 })
@@ -78,12 +87,14 @@ export class AccommodateComponent implements OnInit {
   description = 'description';
   equipements = 'Équipements';
   id: string | null = '';
+   
   dataAccommodate: any = null;
   stars: any = null;
   color = 'red';
   total: number = 0;
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private dataService: DataService
   ) {}
 
@@ -99,12 +110,12 @@ export class AccommodateComponent implements OnInit {
 
         console.log('Filtered Data:', this.filteredData);
         //verifier que filteredData nai pas vide
-        if (this.filteredData.length > 0) {
-        }
+
         this.dataAccommodate = this.filteredData[0];
         console.log(this.dataAccommodate);
-
+        
         //star//
+       
         if (this.dataAccommodate) {
           const rating: number = this.dataAccommodate.rating || 0;
           const colorStars = {
@@ -121,6 +132,15 @@ export class AccommodateComponent implements OnInit {
             });
         }
         this.total = this.dataAccommodate?.pictures.length;
+        ///user
+        const user = data.some((post) => post.id === this.id);
+        console.log(user)
+       if (user === false){
+       
+          // Navigate to 404 page if data is not found
+          this.router.navigate(['/**']);
+        
+       }
       });
     });
   }
