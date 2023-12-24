@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [RouterModule],
   template: `
-    <a [routerLink]="['/accommodate',id]">
+    <a [routerLink]="['/accommodate', id]">
       <div class="frame">
         <div class="containerFrame">
           <img src="{{ cover }}" alt="{{ title }}" />
@@ -22,5 +22,4 @@ export class FrameComponent {
   @Input() title: string = '';
   @Input() cover: string = '';
   @Input() id: string = '';
-
 }

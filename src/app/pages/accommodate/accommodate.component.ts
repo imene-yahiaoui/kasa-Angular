@@ -30,7 +30,6 @@ import { Router } from '@angular/router';
   ],
 
   template: `
-    <!-- @if (dataAccommodate) { -->
     <div class="App">
       <div class="carrousel_imgs">
         <app-carrousel
@@ -74,10 +73,6 @@ import { Router } from '@angular/router';
         ></app-collapse>
       </div>
     </div>
-    <!-- }@else{
-   
-    <h1> hello </h1>
-    } -->
   `,
   styleUrl: './accommodate.component.scss',
 })
@@ -87,7 +82,7 @@ export class AccommodateComponent implements OnInit {
   description = 'description';
   equipements = 'Équipements';
   id: string | null = '';
-   
+
   dataAccommodate: any = null;
   stars: any = null;
   color = 'red';
@@ -113,9 +108,9 @@ export class AccommodateComponent implements OnInit {
 
         this.dataAccommodate = this.filteredData[0];
         console.log(this.dataAccommodate);
-        
+
         //star//
-       
+
         if (this.dataAccommodate) {
           const rating: number = this.dataAccommodate.rating || 0;
           const colorStars = {
@@ -134,13 +129,10 @@ export class AccommodateComponent implements OnInit {
         this.total = this.dataAccommodate?.pictures.length;
         ///user
         const user = data.some((post) => post.id === this.id);
-        console.log(user)
-       if (user === false){
-       
-          // Navigate to 404 page if data is not found
-          this.router.navigate(['/**']);
-        
-       }
+        console.log(user);
+        if (user === false) {
+          this.router.navigate(['**']);
+        }
       });
     });
   }
