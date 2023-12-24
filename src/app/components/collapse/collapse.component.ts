@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-collapse',
   standalone: true,
-  imports: [CommonModule,],
+  imports: [CommonModule],
   template: `
     <div class="collapse">
       <div class="collapse-title">
@@ -27,11 +27,8 @@ import { CommonModule } from '@angular/common';
       <div class="collapse-article" [style.display]="open">
         <p>{{ text }}</p>
 
-        <ul
-        *ngFor="let ArryText of equipements">
-          <li>{{
-            ArryText
-          }}</li>
+        <ul *ngFor="let ArryText of equipements">
+          <li>{{ ArryText }}</li>
         </ul>
       </div>
     </div>
@@ -46,5 +43,5 @@ export class CollapseComponent {
   @Input() title: string = '';
   @Input() text: string = '';
   @Input() ArryText: string = '';
-  @Input() equipements: string []= [];
+  @Input() equipements: string[] = [];
 }

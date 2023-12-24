@@ -4,6 +4,7 @@ import { CollapseComponent } from '../../components/collapse/collapse.component'
 import { InfoComponent } from '../../components/info/info.component';
 import { HostComponent } from '../../components/host/host.component';
 import { StarsComponent } from '../../components/stars/stars.component';
+import { TagComponent } from '../../components/tag/tag.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from '../../data.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
@@ -20,44 +21,50 @@ import { CommonModule } from '@angular/common';
     InfoComponent,
     HostComponent,
     StarsComponent,
+    TagComponent ,
   ],
   template: `
     <div class="App">
       <div class="carrousel_imgs">
         <!-- <app-carrousel></app-carrousel> -->
-
-        <div class="containerInfo">
-          <div class="containerTagInfo">
-            <app-info
-              [title]="dataAccommodate?.title"
-              [location]="dataAccommodate?.location"
-            ></app-info>
-          </div>
-          <div class="containerHostStars">
-            <div class="host">
-              <app-host
-                [name]="dataAccommodate?.host.name"
-                [picture]="dataAccommodate?.host.picture"
-              >
-              </app-host>
-            </div>
-            <div class="star">
-              <app-stars *ngFor="let star of stars" [color]="star.color">
-              </app-stars>
-            </div>
-          </div>
+      </div>
+      <div class="containerInfo">
+        <div class="containerTagInfo">
+          <app-info
+            [title]="dataAccommodate?.title"
+            [location]="dataAccommodate?.location"
+          ></app-info>
+          <app-tag
+        [tags]="dataAccommodate?.tags"
+        > </app-tag>
         </div>
-        <div class="collapseHosing">
-          <app-collapse
-            [title]="description"
-            [text]="dataAccommodate?.description"
-          ></app-collapse>
+       
+        <div class="containerHostStars">
+          <div class="host">
+            <app-host
+              [name]="dataAccommodate?.host.name"
+              [picture]="dataAccommodate?.host.picture"
+            >
+            </app-host>
+          </div>
+          <div class="star">
+            <app-stars *ngFor="let star of stars" [color]="star.color">
+            </app-stars>
+          </div>
 
-          <app-collapse
-            [title]="equipements"
-            [equipements]="dataAccommodate?.equipments"
-          ></app-collapse>
+      
         </div>
+      </div>
+      <div class="collapseHosing">
+        <app-collapse
+          [title]="description"
+          [text]="dataAccommodate?.description"
+        ></app-collapse>
+
+        <app-collapse
+          [title]="equipements"
+          [equipements]="dataAccommodate?.equipments"
+        ></app-collapse>
       </div>
     </div>
   `,
@@ -95,10 +102,7 @@ export class AccommodateComponent implements OnInit {
         }
         this.dataAccommodate = this.filteredData[0];
         console.log(this.dataAccommodate);
-        //         if (this.dataAccommodate) {
-        //  this.equipement= this.dataAccommodate?.equipements || null
-        //  console.log(this.equipement)
-        //         }
+        
 
         //star//
         if (this.dataAccommodate) {
