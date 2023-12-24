@@ -21,9 +21,3 @@ export class DataService {
 
 }
 
-// var header = {
-//   headers: new HttpHeaders()
-//     .set('Authorization',  `Basic ${btoa(AuthService.getToken())}`)
-// }
-
-// this.http.get(url, header)

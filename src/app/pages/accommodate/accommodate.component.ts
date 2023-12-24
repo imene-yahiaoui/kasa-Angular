@@ -10,6 +10,7 @@ import { DataService } from '../../data.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { CommonModule } from '@angular/common';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @Component({
   selector: 'app-accommodate',
@@ -21,12 +22,17 @@ import { CommonModule } from '@angular/common';
     InfoComponent,
     HostComponent,
     StarsComponent,
-    TagComponent ,
+    TagComponent,
+    FontAwesomeModule,
   ],
   template: `
     <div class="App">
       <div class="carrousel_imgs">
-        <!-- <app-carrousel></app-carrousel> -->
+        <app-carrousel
+          [slides]="dataAccommodate?.pictures"
+          [numberLength]="total"
+        >
+        </app-carrousel>
       </div>
       <div class="containerInfo">
         <div class="containerTagInfo">
@@ -34,11 +40,9 @@ import { CommonModule } from '@angular/common';
             [title]="dataAccommodate?.title"
             [location]="dataAccommodate?.location"
           ></app-info>
-          <app-tag
-        [tags]="dataAccommodate?.tags"
-        > </app-tag>
+          <app-tag [tags]="dataAccommodate?.tags"> </app-tag>
         </div>
-       
+
         <div class="containerHostStars">
           <div class="host">
             <app-host
@@ -51,8 +55,6 @@ import { CommonModule } from '@angular/common';
             <app-stars *ngFor="let star of stars" [color]="star.color">
             </app-stars>
           </div>
-
-      
         </div>
       </div>
       <div class="collapseHosing">
@@ -78,8 +80,8 @@ export class AccommodateComponent implements OnInit {
   id: string | null = '';
   dataAccommodate: any = null;
   stars: any = null;
-  // equipement:any[] =null;
   color = 'red';
+  total: number = 0;
   constructor(
     private route: ActivatedRoute,
     private dataService: DataService
@@ -98,11 +100,9 @@ export class AccommodateComponent implements OnInit {
         console.log('Filtered Data:', this.filteredData);
         //verifier que filteredData nai pas vide
         if (this.filteredData.length > 0) {
-          console.log('iiiiiiiiiiiiiiiiiiiiiiii', this.filteredData[0].id);
         }
         this.dataAccommodate = this.filteredData[0];
         console.log(this.dataAccommodate);
-        
 
         //star//
         if (this.dataAccommodate) {
@@ -120,6 +120,7 @@ export class AccommodateComponent implements OnInit {
               };
             });
         }
+        this.total = this.dataAccommodate?.pictures.length;
       });
     });
   }

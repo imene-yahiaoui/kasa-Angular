@@ -12,14 +12,14 @@ import { DataService } from '../../data.service';
     <div>
       <app-picture [photo]="photo" [text]="text" [paragraphe]="paragraphe">
       </app-picture>
-     
+
       <div class="container">
-      <app-frame
-        *ngFor="let item of data"
-        [id]="item.id"
-        [title]="item.title"
-        [cover]="item.cover"
-      ></app-frame>
+        <app-frame
+          *ngFor="let item of data"
+          [id]="item.id"
+          [title]="item.title"
+          [cover]="item.cover"
+        ></app-frame>
       </div>
     </div>
   `,
@@ -33,10 +33,9 @@ export class HomeComponent {
 
   dataService: DataService = inject(DataService);
   constructor() {
-  
     this.dataService.getAllDatas().subscribe((data) => {
       this.data = data;
-      console.log({data})
+      console.log({ data });
     });
   }
 }
