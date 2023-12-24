@@ -8,11 +8,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { DataService } from '../../data.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { map } from 'rxjs/operators';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-accommodate',
   standalone: true,
   imports: [
+    CommonModule,
     CarrouselComponent,
     CollapseComponent,
     InfoComponent,
@@ -40,10 +42,8 @@ import { map } from 'rxjs/operators';
               </app-host>
             </div>
             <div class="star">
-              <!-- <app-stars
-              
-              *ngFor="let star of stars" [color]="star.color">
-              </app-stars> -->
+              <app-stars *ngFor="let star of stars" [color]="star.color">
+              </app-stars>
             </div>
           </div>
         </div>
@@ -55,7 +55,7 @@ import { map } from 'rxjs/operators';
 
           <app-collapse
             [title]="equipements"
-            [ArryText]="dataAccommodate?.equipments"
+            [equipements]="dataAccommodate?.equipments"
           ></app-collapse>
         </div>
       </div>
@@ -71,6 +71,7 @@ export class AccommodateComponent implements OnInit {
   id: string | null = '';
   dataAccommodate: any = null;
   stars: any = null;
+  // equipement:any[] =null;
   color = 'red';
   constructor(
     private route: ActivatedRoute,
@@ -88,13 +89,18 @@ export class AccommodateComponent implements OnInit {
         this.filteredData = data.filter((item) => item.id === this.id);
 
         console.log('Filtered Data:', this.filteredData);
-        // Check if there is an item in the array before accessing its properties
+        //verifier que filteredData nai pas vide
         if (this.filteredData.length > 0) {
           console.log('iiiiiiiiiiiiiiiiiiiiiiii', this.filteredData[0].id);
         }
         this.dataAccommodate = this.filteredData[0];
         console.log(this.dataAccommodate);
-        //star
+        //         if (this.dataAccommodate) {
+        //  this.equipement= this.dataAccommodate?.equipements || null
+        //  console.log(this.equipement)
+        //         }
+
+        //star//
         if (this.dataAccommodate) {
           const rating: number = this.dataAccommodate.rating || 0;
           const colorStars = {
@@ -109,13 +115,8 @@ export class AccommodateComponent implements OnInit {
                 color: index < rating ? colorStars.red : colorStars.grey,
               };
             });
-
-          console.log('Stars0:', this.stars[0].color);
         }
       });
     });
- 
- 
   }
-
 }

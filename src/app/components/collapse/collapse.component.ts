@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-collapse',
   standalone: true,
-  imports: [],
+  imports: [CommonModule,],
   template: `
     <div class="collapse">
       <div class="collapse-title">
@@ -26,10 +27,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
       <div class="collapse-article" [style.display]="open">
         <p>{{ text }}</p>
 
-        <ul>
-          {{
+        <ul
+        *ngFor="let ArryText of equipements">
+          <li>{{
             ArryText
-          }}
+          }}</li>
         </ul>
       </div>
     </div>
@@ -43,6 +45,6 @@ export class CollapseComponent {
   }
   @Input() title: string = '';
   @Input() text: string = '';
-  @Input() ArryText: string[] = [];
-  @Input() equipement: string = '';
+  @Input() ArryText: string = '';
+  @Input() equipements: string []= [];
 }

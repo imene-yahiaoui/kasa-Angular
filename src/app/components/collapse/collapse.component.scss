@@ -53,7 +53,7 @@
     color: $color-primaire;
     line-height: 25.67px;
   }
-  .ArryText {
+  ul {
     font-weight: 400;
     font-family: Montserrat;
     display: flex;
@@ -63,6 +63,11 @@
     align-items: flex-start;
     // row-gap: 8px;
     line-height: 25.67px;
+    list-style: none;
+
+  }
+  li{
+text-decoration: none;
   }
 }
 .collapse_continer {
