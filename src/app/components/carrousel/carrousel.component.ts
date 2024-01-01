@@ -8,7 +8,7 @@ import { Component, Input, HostListener } from '@angular/core';
     <div class="carousel">
       <div
         class="carousel-img"
-        [style.backgroundImage]="'url(' + slides[number] + ')'"
+        [style.backgroundImage]="'url(' + slides?.[number] + ')'"
       ></div>
       <i class="fa-solid fa-angle-left" (click)="goToPrevious()"></i>
 

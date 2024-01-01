@@ -128,7 +128,7 @@ export class AccommodateComponent implements OnInit {
         }
         this.total = this.dataAccommodate?.pictures.length;
         ///user
-        const user = data.some((post) => post.id === this.id);
+        const user = data?.some((post) => post.id === this.id);
         console.log(user);
         if (user === false) {
           this.router.navigate(['**']);
