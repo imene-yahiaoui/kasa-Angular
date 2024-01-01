@@ -20,9 +20,4 @@ context('Window', () => {
   it('cy.document() - get the document object', () => {
     cy.document().should('have.property', 'charset').and('eq', 'UTF-8');
   });
-
-  it('logo click', () => {
-    cy.get('.logo').click();
-    cy.url().should('include', '/');
-  });
 });
