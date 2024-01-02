@@ -6,6 +6,8 @@
  
 Bienvenue chez Kasa, le leader de la location d'appartements entre particuliers en France ! 🇫🇷
 
+
+
 🚀 Technologies Utilisées:
 
 
@@ -13,7 +15,7 @@ Le projet repose sur une stack technologique moderne pour assurer performance et
 
 
 - **Angular:** Un framework JavaScript 🚀 pour le développement d'applications web dynamiques
-- 
+  
   
 
 - **TypeScript:** Un langage de programmation typé pour améliorer la robustesse du code. 💪
@@ -21,7 +23,7 @@ Le projet repose sur une stack technologique moderne pour assurer performance et
   
 
 - **Sass:** Un préprocesseur CSS qui étend les fonctionnalités du langage CSS 🎨
-- 
+  
   
 
 - **Cypress:** Pour les tests End-to-End (E2E) 🧪, garantissant une qualité robuste du produit
