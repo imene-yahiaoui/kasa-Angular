@@ -11,13 +11,20 @@ Bienvenue chez Kasa, le leader de la location d'appartements entre particuliers 
 
 Le projet repose sur une stack technologique moderne pour assurer performance et qualité :
 
-Angular: Un framework JavaScript 🚀 pour le développement d'applications web dynamiques.
 
+- **Angular:** Un framework JavaScript 🚀 pour le développement d'applications web dynamiques
+- 
+  
 
-TypeScript: Un langage de programmation typé pour améliorer la robustesse du code. 💪
+- **TypeScript:** Un langage de programmation typé pour améliorer la robustesse du code. 💪
 
+  
 
-Sass: Un préprocesseur CSS qui étend les fonctionnalités du langage CSS. 🎨
+- **Sass:** Un préprocesseur CSS qui étend les fonctionnalités du langage CSS 🎨
+- 
+  
+
+- **Cypress:** Pour les tests End-to-End (E2E) 🧪, garantissant une qualité robuste du produit
 
 
 # Guide d'utilisation 🚀
