@@ -37,9 +37,15 @@ Après avoir cloné le code, accédez au répertoire du projet et exécutez la c
  
  
 cd Kasa
-npm install
+
+
+### npm install
+
+
+
 ### 3. Démarrer le projet Angular
-Une fois les dépendances installées, lancez le serveur Angular avec la commande suivante. Cela ouvrira l'application sur votre navigateur à l'adresse http://localhost:4200/.
+Une fois les dépendances installées, lancez le serveur Angular avec la commande suivante. 
+
 
  
  
@@ -49,8 +55,11 @@ cd Kasa
 ### ng serve
 
 
+Cela ouvrira l'application sur votre navigateur à l'adresse http://localhost:4200/.
+
+
 ### 4. Démarrer le serveur JSON
-Pour utiliser le fichier JSON, utilisez la commande suivante. Cela lancera un serveur local à l'adresse http://localhost:3000/.
+Pour utiliser le fichier JSON, utilisez la commande suivante.
 
  
 
@@ -60,6 +69,11 @@ cd Kasa
 
 ### json-server --watch data.json
 
+
+
+ Cela lancera un serveur local à l'adresse http://localhost:3000/.
+
+ 
 
 ### 5. Exécuter les tests avec Cypress
 
