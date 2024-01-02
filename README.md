@@ -27,7 +27,7 @@ Pour utiliser ce projet, suivez les étapes ci-dessous :
 ### 1. Cloner le code
 
  
-git clone [lien-du-repo]
+git clone [https://github.com/imene-yahiaoui/kasa-Angular.git]
 
 
 ### 2. Installer les dépendances
